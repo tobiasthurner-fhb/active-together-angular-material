@@ -1,0 +1,32 @@
+<form [formGroup]="this.signupForm" (ngSubmit)="this.onSubmit()">
+  <h2>Zum Kurs anmelden!</h2>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" formControlName="name" required/>
+    @if (this.signupForm.get('name')?.hasError('required')) {
+      <mat-error>Name ist erforderlich</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Geburtsdatum</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthdate" [max]="this.today" required/>
+    <mat-datepicker-toggle matSuffix [for]="picker"/>
+    <mat-datepicker #picker/>
+    @if (this.signupForm.get('birthdate')?.hasError('required')) {
+      <mat-error>Geburtsdatum ist erforderlich</mat-error>
+    }
+  </mat-form-field>
+  <mat-checkbox formControlName="newsletter">Newsletter abonnieren</mat-checkbox>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Kurs auswählen</mat-label>
+    <mat-select formControlName="courseId" required>
+      @for (course of this.store.courses; track course.id) {
+        <mat-option [value]="course.id">{{ course.name }}</mat-option>
+      }
+    </mat-select>
+    @if (this.signupForm.get('courseId')?.hasError('required')) {
+      <mat-error>Bitte einen Kurs auswählen</mat-error>
+    }
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="this.signupForm.invalid">Erfassen</button>
+</form>

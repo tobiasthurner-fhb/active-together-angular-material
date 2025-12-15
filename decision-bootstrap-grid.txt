@@ -1,0 +1,14 @@
+Begründung für Bootstrap Grid
+
+Bootstrap Grid wird verwendet, da es ein responsives, flexibles und standardisiertes Layout-System bietet.
+Im Vergleich zu reinem CSS Grid ermöglicht es:
+
+- Einfache Responsive-Umsetzung mit vorgefertigten Breakpoints (col-12, col-md-10) ohne eigene Media Queries.
+
+- Schnelle vertikale und horizontale Zentrierung durch Utility-Klassen (align-items-center, justify-content-center).
+
+- Kombination mit bestehenden Komponentenbibliotheken wie Angular Material ohne zusätzliche Anpassungen.
+
+- Hohe Wartbarkeit und Wiederverwendbarkeit durch klare Row- und Column-Struktur.
+
+Bootstrap Grid ist daher besonders effizient für Layouts, die auf mehreren Bildschirmgrößen konsistent sein müssen.

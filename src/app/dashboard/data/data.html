@@ -1,0 +1,51 @@
+<h1>Alle Kurse</h1>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-10">
+    <div class="row header">
+      <div class="col">Kurs</div>
+      <div class="col">Veranstaltungsort</div>
+      <div class="col">Adresse des Veranstaltungsortes</div>
+      <div class="col">Öffentlich erreichbar?</div>
+      <div class="col">Kursleiter</div>
+      <div class="col-3">Alle Termine</div>
+    </div>
+    @for (course of this.store.courses; track $index) {
+      <div class="row border-top align-items-center row-course">
+        <div class="col">{{ course.name }}</div>
+        <div class="col">{{ course.eventLocation.name }}</div>
+        <div class="col">{{ course.eventLocation.address }}</div>
+        <div class="col">{{ course.eventLocation.venueByPublicTansport ? 'Ja' : 'Nein' }}</div>
+        <div class="col">{{ course.instructor }}</div>
+        <div class="col-3">
+          <ul>
+            @for (date of course.dates; track $index) {
+              <li>
+                <span>{{ date.begin | date: "MMM dd, yyyy 'um' hh:mm a" }}</span> -
+                <span>{{ date.end | date: "MMM dd, yyyy 'um' hh:mm a" }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+<h1>Alle Anmeldungen</h1>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-10">
+    <div class="row header">
+      <div class="col">Name</div>
+      <div class="col">Geburtsdatum</div>
+      <div class="col">Newsletter?</div>
+      <div class="col">Kurs</div>
+    </div>
+    @for (registration of this.store.registrations; track $index) {
+      <div class="row border-top align-items-center row-registration">
+        <div class="col">{{ registration.name }}</div>
+        <div class="col">{{ registration.birthdate | date: "dd.MM.yyyy" }}</div>
+        <div class="col">{{ registration.newsletter ? 'Ja' : 'Nein' }}</div>
+        <div class="col">{{ registration.course?.name }}</div>
+      </div>
+    }
+  </div>
+</div>

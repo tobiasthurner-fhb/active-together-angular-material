@@ -1,0 +1,13 @@
+.header {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .row-course {
+    height: 100px;
+  }
+
+  .row-registration {
+    height: 50px;
+  }
+}
