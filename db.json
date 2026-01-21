@@ -93,17 +93,11 @@
       "courseId": "_iL775j"
     },
     {
-      "id": 2,
-      "name": "Julia",
-      "birthdate": "2024-11-13",
-      "courseId": "_iL775p"
-    },
-    {
       "name": "Tobias",
       "birthdate": "2004-07-02T22:00:00.000Z",
       "newsletter": true,
       "courseId": "_iL775o",
-      "id": 3
+      "id": 2
     }
   ]
 }

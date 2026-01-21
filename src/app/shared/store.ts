@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { RegistrationDto } from './Interfaces/Registration';
-import { Course } from './Interfaces/Course';
+import {Injectable} from '@angular/core';
+import {RegistrationDto} from './Interfaces/Registration';
+import {Course} from './Interfaces/Course';
 
 @Injectable({
   providedIn: 'root',
@@ -8,4 +8,5 @@ import { Course } from './Interfaces/Course';
 export class Store {
   public courses: Course[] = [];
   public registrations: RegistrationDto[] = [];
+  public isLoading: boolean = true;
 }

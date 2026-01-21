@@ -38,6 +38,7 @@
       <div class="col">Geburtsdatum</div>
       <div class="col">Newsletter?</div>
       <div class="col">Kurs</div>
+      <div class="col"></div>
     </div>
     @for (registration of this.store.registrations; track $index) {
       <div class="row border-top align-items-center row-registration">
@@ -45,6 +46,9 @@
         <div class="col">{{ registration.birthdate | date: "dd.MM.yyyy" }}</div>
         <div class="col">{{ registration.newsletter ? 'Ja' : 'Nein' }}</div>
         <div class="col">{{ registration.course?.name }}</div>
+        <div class="col">
+          <button mat-raised-button (click)="this.deleteRegistration(registration.id)">Delete</button>
+        </div>
       </div>
     }
   </div>
