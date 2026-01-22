@@ -30,9 +30,7 @@ export class Backend {
   }
 
   public addRegistration(registration: RegistrationModel) {
-    this.http.post('http://localhost:5000/registrations', registration).subscribe((_) => {
-      this.getRegistrations();
-    });
+    return this.http.post('http://localhost:5000/registrations', registration);
   }
 
   public deleteRegistration(id: string) {

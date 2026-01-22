@@ -1,0 +1,22 @@
+Umgesetzte UX-Feedbackpunkte (5)
+1. Erfolgsmeldung nach Kursanmeldung
+   Nach dem Absenden des Anmeldeformulars wird eine Erfolgsmeldung angezeigt, sodass Nutzer:innen sofort erkennen, dass die Anmeldung erfolgreich war.
+
+2. Erfolgsmeldung nach dem Löschen einer Anmeldung
+   Nach dem Löschen einer Anmeldung wird eine Bestätigungsmeldung angezeigt, um die Aktion eindeutig zu bestätigen.
+
+3. Empty State bei fehlenden Anmeldungen
+   Sind keine Anmeldungen vorhanden, wird ein Hinweistext angezeigt ("Keine Anmeldungen vorhanden"), um leere Bereiche verständlich zu erklären.
+
+4. Überschriften zentrieren und visuell hervorheben
+   Die Überschriften der einzelnen Bereiche (z. B. "Alle Kurse", "Alle Anmeldungen") wurden zentriert, um die visuelle Struktur und Orientierung zu verbessern.
+
+5. Destruktive Aktion visuell kennzeichnen
+   Der Button zum Löschen einer Anmeldung wird visuell als destruktive Aktion hervorgehoben (Warnfarbe), um unbeabsichtigte Klicks zu vermeiden.
+
+6. Konsistente Sprache im gesamten User Interface
+   Alle Bedienelemente und Beschriftungen wurden einheitlich auf Deutsch gehalten, um Verständlichkeit und Professionalität der Anwendung zu erhöhen.
+
+Zusätzlicher UX-Feedbackpunkt (1)
+7. Visuelle Trennung der Hauptbereiche
+   Eine stärkere visuelle Abgrenzung zwischen Kursübersicht, Anmeldeformular und Anmeldungen (z. B. durch Divider oder größere Abstände) könnte die Übersichtlichkeit weiter verbessern.

@@ -5,6 +5,7 @@ import {Backend} from '../../shared/backend';
 import {MatButton} from '@angular/material/button';
 import {finalize} from 'rxjs';
 import {MatProgressSpinner} from '@angular/material/progress-spinner';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-data',
@@ -15,6 +16,7 @@ import {MatProgressSpinner} from '@angular/material/progress-spinner';
 export class Data {
   public store = inject(Store);
   public backend = inject(Backend);
+  private snackBar = inject(MatSnackBar);
 
   public pageSize = 5;
   public pageIndex = 0;
@@ -37,7 +39,8 @@ export class Data {
       .subscribe(() => {
         this.store.registrations = this.store.registrations.filter(r => r.id !== id);
         this.clampPageIndex();
-        this.backend.getRegistrations()
+        this.snackBar.open('Anmeldung gelöscht', 'OK', {duration: 2500});
+        this.backend.getRegistrations();
       });
   }
 

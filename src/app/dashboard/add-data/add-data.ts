@@ -9,6 +9,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-data',
@@ -22,6 +23,7 @@ export class AddData {
   private fb = inject(FormBuilder);
   public signupForm: any;
   public today: any;
+  private snackBar = inject(MatSnackBar);
 
   ngOnInit() {
     this.today = new Date();
@@ -36,7 +38,12 @@ export class AddData {
 
   onSubmit() {
     if (this.signupForm.valid) {
-      this.backend.addRegistration(this.signupForm.value);
+      this.backend.addRegistration(this.signupForm.value)
+        .subscribe(() => this.snackBar.open('Anmeldung erfolgreich gespeichert', 'OK', {duration: 2500}))
+        .add(() => {
+          this.signupForm.reset();
+          this.backend.getRegistrations();
+        });
     }
   }
 }
