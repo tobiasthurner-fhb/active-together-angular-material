@@ -36,8 +36,6 @@ export class Backend {
   }
 
   public deleteRegistration(id: string) {
-    this.http.delete('http://localhost:5000/registrations/' + id).subscribe((_) => {
-      this.getRegistrations();
-    });
+    return this.http.delete('http://localhost:5000/registrations/' + id);
   }
 }

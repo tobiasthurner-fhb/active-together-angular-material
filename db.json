@@ -93,11 +93,46 @@
       "courseId": "_iL775j"
     },
     {
-      "name": "Tobias",
-      "birthdate": "2004-07-02T22:00:00.000Z",
-      "newsletter": true,
-      "courseId": "_iL775o",
+      "name": "maxi",
+      "birthdate": "2026-01-20T23:00:00.000Z",
+      "newsletter": false,
+      "courseId": "_iL775p",
       "id": 2
+    },
+    {
+      "name": "maxi1",
+      "birthdate": "2026-01-20T23:00:00.000Z",
+      "newsletter": false,
+      "courseId": "_iL775p",
+      "id": 3
+    },
+    {
+      "name": "maxi12",
+      "birthdate": "2026-01-20T23:00:00.000Z",
+      "newsletter": false,
+      "courseId": "_iL775p",
+      "id": 4
+    },
+    {
+      "name": "maxi123",
+      "birthdate": "2026-01-20T23:00:00.000Z",
+      "newsletter": false,
+      "courseId": "_iL775p",
+      "id": 5
+    },
+    {
+      "name": "maxi1234",
+      "birthdate": "2026-01-20T23:00:00.000Z",
+      "newsletter": false,
+      "courseId": "_iL775p",
+      "id": 6
+    },
+    {
+      "name": "maxi12345",
+      "birthdate": "2026-01-20T23:00:00.000Z",
+      "newsletter": false,
+      "courseId": "_iL775p",
+      "id": 7
     }
   ]
 }

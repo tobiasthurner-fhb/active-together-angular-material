@@ -8,6 +8,7 @@ export interface RegistrationDto {
   newsletter: boolean;
   course?: Course;
   courseId: number;
+  isDeleting: boolean;
 }
 
 export interface RegistrationModel {

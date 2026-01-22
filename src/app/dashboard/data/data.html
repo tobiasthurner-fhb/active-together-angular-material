@@ -40,16 +40,40 @@
       <div class="col">Kurs</div>
       <div class="col"></div>
     </div>
-    @for (registration of this.store.registrations; track $index) {
+    @for (registration of this.pagedRegistrations; track registration.id) {
       <div class="row border-top align-items-center row-registration">
         <div class="col">{{ registration.name }}</div>
         <div class="col">{{ registration.birthdate | date: "dd.MM.yyyy" }}</div>
         <div class="col">{{ registration.newsletter ? 'Ja' : 'Nein' }}</div>
         <div class="col">{{ registration.course?.name }}</div>
         <div class="col">
-          <button mat-raised-button (click)="this.deleteRegistration(registration.id)">Delete</button>
+          <button mat-raised-button (click)="this.deleteRegistration(registration.id)"
+                  [disabled]="registration.isDeleting">Delete
+          </button>
         </div>
+        @if (registration.isDeleting) {
+          <div class="row-overlay">
+            <mat-progress-spinner mode="indeterminate" diameter="24"></mat-progress-spinner>
+          </div>
+        }
       </div>
     }
   </div>
 </div>
+@if (showPagination) {
+  <div class="pagination-wrapper">
+    <div class="pagination-bar">
+      <button mat-button (click)="prevPage()" [disabled]="this.pageIndex === 0">Zurück</button>
+      <span class="pagination-info">Seite {{ this.currentPage }} von {{ this.totalPages }}</span>
+      <button mat-button (click)="this.nextPage()" [disabled]="this.pageIndex >= this.totalPages - 1">Weiter</button>
+    </div>
+
+    <div class="page-numbers">
+      @for (p of [].constructor(this.totalPages); track $index) {
+        <button mat-button (click)="this.goToPage($index + 1)"
+                [class.active-page]="this.currentPage === ($index + 1)">{{ $index + 1 }}
+        </button>
+      }
+    </div>
+  </div>
+}

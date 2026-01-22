@@ -11,3 +11,48 @@
     height: 50px;
   }
 }
+
+.row-registration {
+  position: relative;
+}
+
+.row-registration .row-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 10;
+}
+
+.pagination-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-numbers {
+  margin-top: 8px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination-info {
+  font-weight: 500;
+}
+
+.active-page {
+  border: 2px solid currentColor;
+  border-radius: 8px;
+}
